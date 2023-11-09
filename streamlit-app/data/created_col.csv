@@ -1,0 +1,5 @@
+﻿Variable;Dtype;Catégorie
+YearOfCall;int64;Temporelle
+MonthOfCall;int64;Temporelle
+DayOfCall;object;Temporelle
+DayOfWeekCall;int64;Temporelle

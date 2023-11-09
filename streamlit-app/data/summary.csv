@@ -1,0 +1,59 @@
+,type_info,nb_NaN,%_NaN,nb_unique_values,list_unique_values,dup,mean_or_mode,min,max,flag
+IncidentNumber,object,0,0.0,639663,Too many categories...,0,053666-07052021,000001-01012022,213957-31122022,Nothing to report
+CalYear,int64,0,0.0,7,Too many values...,0,2019.7372002913623,2017,2023,Nothing to report
+HourOfCall,int64,0,0.0,24,Too many values...,0,13.419951237278191,0,23,Nothing to report
+ResourceMobilisationId,int64,0,0.0,988460,Too many values...,0,5590465.944434777,4834035,6344481,Nothing to report
+Resource_Code,object,0,0.0,142,Too many categories...,0,A242,A211,H432,Nothing to report
+PerformanceReporting,object,0,0.0,3,['1' '2' 'Not Used'],0,1,1,Not Used,Nothing to report
+DateAndTimeMobilised,object,0,0.0,655451,Too many categories...,0,10/12/2017 03:44:11,01/01/2017 00:06:18,31/12/2022 23:59:04,Nothing to report
+DateAndTimeMobile,object,6110,0.0061813325779495375,973313,Too many categories...,0,09/07/2019 18:43:02,,,Nothing to report
+DateAndTimeArrived,object,0,0.0,981785,Too many categories...,0,14/11/2022 01:53:04,01/01/2017 00:10:31,31/12/2022 23:52:03,Nothing to report
+TurnoutTimeSeconds,float64,6129,0.006200554397750036,768,Too many values...,0,73.94869244684327,0.0,1160.0,Nothing to report
+TravelTimeSeconds,float64,6224,0.006296663496752524,1174,Too many values...,0,277.43421540240837,0.0,1195.0,Nothing to report
+AttendanceTimeSeconds,int64,0,0.0,1201,Too many values...,0,350.05001618679563,0,1200,Nothing to report
+DateAndTimeLeft,object,397,0.00040163486635776867,982354,Too many categories...,0,10/06/2021 10:50:08,,,Nothing to report
+DateAndTimeReturned,object,988459,0.9999989883252737,1,[nan '27/05/2017 15:55:00'],0,27/05/2017 15:55:00,,,Too many missing values ! 
+DeployedFromStation_Code,object,21,2.124516925318172e-05,112,Too many categories...,0,A24,,,Nothing to report
+DeployedFromStation_Name,object,21,2.124516925318172e-05,112,Too many categories...,0,Soho,,,Nothing to report
+DeployedFromLocation,object,831,0.0008407016975901908,2,['Home Station' 'Other Station' nan],0,Home Station,,,It's imbalanced !
+PumpOrder,int64,0,0.0,13,Too many values...,0,1.5196689800295409,1,13,Nothing to report
+PlusCode_Code,object,0,0.0,1,['Initial'],0,Initial,Initial,Initial,It's imbalanced !
+PlusCode_Description,object,0,0.0,1,['Initial Mobilisation'],0,Initial Mobilisation,Initial Mobilisation,Initial Mobilisation,It's imbalanced !
+DelayCodeId,float64,758415,0.7672692875786578,10,Too many values...,0,10.484931209111261,3.0,13.0,Too many missing values ! 
+DelayCode_Description,object,758415,0.7672692875786578,10,Too many categories...,0,Not held up,,,Too many missing values ! 
+DateOfCall,object,3766,0.0038099670194039212,2281,Too many categories...,0,19 Dec 2022,,,Nothing to report
+TimeOfCall,object,3766,0.0038099670194039212,85637,Too many categories...,0,21:42:50,,,Nothing to report
+IncidentGroup,object,3766,0.0038099670194039212,3,['False Alarm' 'Special Service' 'Fire' nan],0,False Alarm,,,Nothing to report
+StopCodeDescription,object,3766,0.0038099670194039212,9,Too many categories...,0,AFA,,,Nothing to report
+SpecialServiceType,object,771213,0.7802167007263825,21,Too many categories...,0,Effecting entry/exit,,,Too many missing values ! 
+PropertyCategory,object,3766,0.0038099670194039212,9,Too many categories...,0,Dwelling,,,Nothing to report
+PropertyType,object,3766,0.0038099670194039212,286,Too many categories...,0,Purpose Built Flats/Maisonettes - 4 to 9 storeys ,,,Nothing to report
+AddressQualifier,object,3766,0.0038099670194039212,11,Too many categories...,0,Correct incident location,,,Nothing to report
+Postcode_full,object,579426,0.5861906399854319,75810,Too many categories...,0,SW17 0QT,,,Too many missing values ! 
+Postcode_district,object,3766,0.0038099670194039212,305,Too many categories...,0,CR0,,,Nothing to report
+UPRN,float64,3766,0.0038099670194039212,159434,Too many values...,0,18978436519.699562,0.0,200004439642.0,Nothing to report
+USRN,float64,3766,0.0038099670194039212,47107,Too many values...,0,20362775.91552198,4200558.0,99990422.0,Nothing to report
+IncGeo_BoroughCode,object,3766,0.0038099670194039212,33,Too many categories...,0,E09000033,,,Nothing to report
+IncGeo_BoroughName,object,3766,0.0038099670194039212,33,Too many categories...,0,WESTMINSTER,,,Nothing to report
+ProperCase,object,3766,0.0038099670194039212,33,Too many categories...,0,Westminster,,,Nothing to report
+IncGeo_WardCode,object,3770,0.003814013718309289,779,Too many categories...,0,E05013808,,,Nothing to report
+IncGeo_WardName,object,3770,0.003814013718309289,1387,Too many categories...,0,West End,,,Nothing to report
+IncGeo_WardNameNew,object,3770,0.003814013718309289,1387,Too many categories...,0,West End,,,Nothing to report
+Easting_m,float64,579426,0.5861906399854319,47586,Too many values...,0,530617.8532004674,503582.0,560461.0,Too many missing values ! 
+Northing_m,float64,579426,0.5861906399854319,36594,Too many values...,0,180367.49940347258,155901.0,200885.0,Too many missing values ! 
+Easting_rounded,float64,3766,0.0038099670194039212,567,Too many values...,0,530580.180746506,503550.0,560450.0,Nothing to report
+Northing_rounded,float64,3766,0.0038099670194039212,443,Too many values...,0,180465.65491411544,155950.0,200850.0,Nothing to report
+Latitude,float64,579426,0.5861906399854319,264917,Too many values...,0,51.39500628543037,0.0,51.6914116063,Too many missing values ! 
+Longitude,float64,579426,0.5861906399854319,265110,Too many values...,0,-0.11889662435567505,-0.5101547173,0.3136348,Too many missing values ! 
+FRS,object,3766,0.0038099670194039212,1,['London' nan],0,London,,,It's imbalanced !
+IncidentStationGround,object,3768,0.0038119903688566053,102,Too many categories...,0,Soho,,,Nothing to report
+FirstPumpArriving_AttendanceTime,float64,3771,0.003815025393035631,1200,Too many values...,0,304.81631865492557,1.0,1200.0,Nothing to report
+FirstPumpArriving_DeployedFromStation,object,3788,0.003832223863383445,105,Too many categories...,0,Soho,,,Nothing to report
+SecondPumpArriving_AttendanceTime,float64,389521,0.39406855107945693,1200,Too many values...,0,386.0571143305078,1.0,1200.0,Too many missing values ! 
+SecondPumpArriving_DeployedFromStation,object,389534,0.3940817028508994,102,Too many categories...,0,Soho,,,Too many missing values ! 
+NumStationsWithPumpsAttending,float64,3766,0.0038099670194039212,10,Too many values...,0,1.7895853940411945,1.0,14.0,Nothing to report
+NumPumpsAttending,float64,3766,0.0038099670194039212,13,Too many values...,0,2.0770300215092203,1.0,14.0,Nothing to report
+PumpCount,float64,3766,0.0038099670194039212,92,Too many values...,0,2.162451482389453,1.0,319.0,Nothing to report
+PumpHoursRoundUp,float64,3982,0.00402848876029379,213,Too many values...,0,1.6288916562889166,1.0,2163.0,Nothing to report
+Notional Cost (£),float64,3982,0.00402848876029379,615,Too many values...,0,559.9486631494051,326.0,709464.0,Nothing to report
+NumCalls,float64,3789,0.003833235538109787,81,Too many values...,0,1.3821885685675723,1.0,369.0,It's imbalanced !
