@@ -17,25 +17,23 @@ def visu():
     #Import des dataframes
     @st.cache_data
     def load_data(url):
-        df = pd.read_csv(url)
+        df = pd.read_csv(url, sep = ",", header = 0)
         return df
     
-    df_mob = load_data("data/df_mob2016.csv")
-    df_inc = load_data("data/df_inc2016.csv")
-    df_mob = df_mob[df_mob.CalYear > 2016]
-    df_inc = df_inc[df_inc.CalYear > 2016]
+    df_mob = load_data("data/data_mob_2021.csv")
+    df_inc = load_data("data/data_inc_2021.csv")
+    df = load_data("data/data_all_2021.csv")
     
     @st.cache_data
-    def merge(df1, df2):
+    def merging(df1, df2):
         df3 = df1.merge(right=df2, on = ["IncidentNumber", "CalYear", "HourOfCall"], how = "left")
         return df3
     
-    df = merge(df_mob, df_inc)
     #Graphiques
     st.subheader("Part d'incidents rapportés")
     labels = ['False Alarm', 'Special Service', 'Fire']
     values = df['IncidentGroup'].value_counts()
-    fig, ax = plt.subplots(figsize=(4, 4))
+    fig, ax = plt.subplots(figsize=(2, 2))
     ax.pie(values, labels=labels, autopct='%1.1f%%')
     st.pyplot(fig)
 
@@ -50,12 +48,11 @@ def visu():
     sns.countplot(data=df_inc, x="HourOfCall")
     plt.xlabel('Heure')
     plt.ylabel("Nombre d'appels")
-    plt.title("Répartition des appels en fonction de l'heure")
+    plt.title("R épartition des appels en fonction de l'heure")
     st.pyplot()
 
     #Matrice de corrélation
     #Définition d'un DF avec seulement les variables numériques
-    df = df.set_index('IncidentNumber')
     df_num = df.select_dtypes(include=['int64', 'float64'])
     #Affichage Heatmap
     st.subheader("Heatmap : corrélation entre les valeurs numériques")
