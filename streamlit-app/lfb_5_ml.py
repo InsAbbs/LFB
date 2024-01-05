@@ -19,7 +19,7 @@ def machine():
     
     stats = load_data("data/statistiques.csv")
     optimisation = load_data("data/optimisation.csv")
-    df = load_data("data/LFB_Modelisation_v3.csv")
+    df = load_data("data/modelisation.csv")
     df = df[(df.YearOfCall == 2023) & (df.MonthOfCall == 1)]
     stats = stats.sort_values(by = "Modèle")
     stats_2016 = stats[stats["sample"] == "2016-2023"]
