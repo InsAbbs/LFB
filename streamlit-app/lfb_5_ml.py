@@ -8,9 +8,6 @@ st.title("Modélisation 🪄")
 
 @st.cache_data(experimental_allow_widgets=True)
 
-
-st.subheader("Apprentissage supervisé --- Régression")
-
 #Import des dataframes
 @st.cache_data
 def load_data(url):
