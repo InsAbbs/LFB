@@ -1,2 +1,2 @@
 pandas
-streamline-option-menu
+streamlit-option-menu
