@@ -15,9 +15,9 @@ def exploration():
         df = pd.read_csv(url)
         return df
     
-    df_mob = load_data(Path("data") / "data_mob_2021.csv")
-    df_inc = load_data(Path("data") / "data_inc_2021.csv")
-    summary = load_data(Path("data") / "summary.csv")
+    df_mob = load_data("data/data_mob_2021.csv")
+    df_inc = load_data("data/data_inc_2021.csv")
+    summary = load_data("data/summary.csv")
     
     @st.cache_data
     def merge(df1, df2):
