@@ -10,6 +10,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import OneHotEncoder
 
+SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True
+
 
 # Custom function
 # st.cache is used to load the function into memory
