@@ -3,10 +3,6 @@ streamlit-option-menu
 seaborn
 matplotlib
 numpy
-sklearn.model_selection
-sklearn.linear_model
-sklearn.tree
-sklearn.neighbors
-sklearn.preprocessing
+sklearn
 scikit-learn
 PIL
