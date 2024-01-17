@@ -13,9 +13,9 @@ def exploration():
         df = pd.read_csv(url)
         return df
     
-    df_mob = load_data("LFB\streamlit-app\data\data_mob_2021.csv")
-    df_inc = load_data("LFB\streamlit-app\data\data_inc_2021.csv")
-    summary = load_data("LFB\streamlit-app\data\summary.csv")
+    df_mob = load_data("LFB/streamlit-app/data/data_mob_2021.csv")
+    df_inc = load_data("LFB/streamlit-app/data/data_inc_2021.csv")
+    summary = load_data("LFB/streamlit-app/data/summary.csv")
     
     @st.cache_data
     def merge(df1, df2):
