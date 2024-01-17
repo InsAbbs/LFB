@@ -1,7 +1,7 @@
 pandas
 streamlit-option-menu
 seaborn
-matplotlib.pyplot
+matplotlib
 numpy
 sklearn.model_selection
 sklearn.linear_model
