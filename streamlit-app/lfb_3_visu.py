@@ -48,7 +48,7 @@ def visu():
     sns.countplot(data=df_inc, x="HourOfCall")
     plt.xlabel('Heure')
     plt.ylabel("Nombre d'appels")
-    plt.title("R épartition des appels en fonction de l'heure")
+    plt.title("Répartition des appels en fonction de l'heure")
     st.pyplot()
 
     #Matrice de corrélation
