@@ -1,21 +1,23 @@
 # Core Pkg
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 
 @st.cache_data
 def exploration():
     with st.container():
         st.title("Exploration🕵️‍♂️")
                 
+   
     #Import des datafames
     @st.cache_data
     def load_data(url):
         df = pd.read_csv(url)
         return df
     
-    df_mob = load_data("./data/data_mob_2021.csv")
-    df_inc = load_data("./data/data_inc_2021.csv")
-    summary = load_data("./data/data/summary.csv")
+    df_mob = load_data(Path("data") / "data_mob_2021.csv")
+    df_inc = load_data(Path("data") / "data_inc_2021.csv")
+    summary = load_data(Path("data") / "summary.csv")
     
     @st.cache_data
     def merge(df1, df2):
