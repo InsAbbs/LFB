@@ -15,15 +15,14 @@ def exploration():
         df = pd.read_csv(url)
         return df
     
-    df_mob = load_data("data/data_mob_2021.csv")
-    df_inc = load_data("data/data_inc_2021.csv")
-    summary = load_data("data/summary.csv")
-    
+    df_mob = load_data("data_mob_2021.csv")
+    df_inc = load_data("data_inc_2021.csv")
+
     @st.cache_data
     def merge(df1, df2):
         df3 = df1.merge(right=df2, on = ["IncidentNumber", "CalYear", "HourOfCall"], how = "left")
         return df3
-    
+ 
     df = merge(df_mob, df_inc)
     
     st.header("Rapport des incidents")
@@ -40,6 +39,43 @@ def exploration():
 
     #Description des rapports 'Incident' et 'Mobilisation' après fusion
     st.write("Il y a", df.shape[0], "lignes et", df.shape[1], "colonnes dans le jeu de données fusionnées")
+
+    @st.cache_data
+    def summarize(df):
+        table = pd.DataFrame(index=df.columns, columns=['type_info', 'nb_NaN', '%_NaN', 'nb_unique_values', 'list_unique_values', 'dup', "mean_or_mode", "min", "max", "flag"])
+        table.loc[:, 'type_info'] = df.dtypes.values
+        table.loc[:, 'nb_NaN'] = df.isna().sum().values
+        table.loc[:, '%_NaN'] = df.isna().sum().values / len(df)
+        table.loc[:, 'nb_unique_values'] = df.nunique().values
+        table.loc[:, 'dup'] = df.duplicated().sum()
+
+        def get_list_unique_values(colonne):
+            if colonne.nunique() < 6:
+                    return colonne.unique()
+            else:
+                    return "Too many categories..." if colonne.dtypes == "O" else "Too many values..."
+
+        def get_mean_mode(colonne):
+            return colonne.mode()[0] if colonne.dtypes == "O" else colonne.mean()
+
+        def alerts(colonne, thresh_na = 0.25, thresh_balance = 0.8):
+            if (colonne.isna().sum()/len(df)) > thresh_na:
+                return "Too many missing values ! "
+            elif colonne.value_counts(normalize=True).values[0] > thresh_balance:
+                return "It's imbalanced !"
+            else:
+                return "Nothing to report"
+
+        table.loc[:, 'list_unique_values'] = df.apply(get_list_unique_values)
+        table.loc[:, 'mean_or_mode'] = df.apply(get_mean_mode)
+        table.loc[:, 'min'] = df.min() # Affichage de la plus petite valeur
+        table.loc[:, 'max'] = df.max() # Affichage de la plus grande valeur
+        table.loc[:, 'flag'] = df.apply(alerts)
+
+        return table
+
+    summary = summarize(df)
+
 
     #Résumé
     st.header("Résumé")
