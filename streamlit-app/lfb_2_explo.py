@@ -42,8 +42,49 @@ def exploration():
     #Summary
     st.header("Résumé")
     st.dataframe(df_summary, use_container_width = True)
+"""
+    @st.cache_data
+    def summarize(df):
+        table = pd.DataFrame(index=df.columns, columns=['type_info', 'nb_NaN', '%_NaN', 'nb_unique_values', 'list_unique_values', 'dup', "mean_or_mode", "min", "max", "flag"])
+        table.loc[:, 'type_info'] = df.dtypes.values
+        table.loc[:, 'nb_NaN'] = df.isna().sum().values
+        table.loc[:, '%_NaN'] = df.isna().sum().values / len(df)
+        table.loc[:, 'nb_unique_values'] = df.nunique().values
+        table.loc[:, 'dup'] = df.duplicated().sum()
+
+        def get_list_unique_values(colonne):
+            if colonne.nunique() < 6:
+                    return colonne.unique()
+            else:
+                    return "Too many categories..." if colonne.dtypes == "O" else "Too many values..."
+
+        def get_mean_mode(colonne):
+            return colonne.mode()[0] if colonne.dtypes == "O" else colonne.mean()
+
+        def alerts(colonne, thresh_na = 0.25, thresh_balance = 0.8):
+            if (colonne.isna().sum()/len(df)) > thresh_na:
+                return "Too many missing values ! "
+            elif colonne.value_counts(normalize=True).values[0] > thresh_balance:
+                return "It's imbalanced !"
+            else:
+                return "Nothing to report"
+
+        table.loc[:, 'list_unique_values'] = df.apply(get_list_unique_values)
+        table.loc[:, 'mean_or_mode'] = df.apply(get_mean_mode)
+        table.loc[:, 'min'] = df.min() # Affichage de la plus petite valeur
+        table.loc[:, 'max'] = df.max() # Affichage de la plus grande valeur
+        table.loc[:, 'flag'] = df.apply(alerts)
+
+        return table
+
+    summary = summarize(df)
 
 
+    #Résumé
+    st.header("Résumé")
+    st.write("Exploration du dataframe avec la fonction personnalisée 'summary'")
+    summary.rename(columns={summary.columns[0]: 'Variable'},inplace=True)
+    st.dataframe(summary)
 
     #Tests statistiques
     from scipy.stats import chi2_contingency
@@ -67,3 +108,4 @@ def exploration():
     table = sm.stats.anova_lm(result)
     st.write("Tableau ANOVA :")
     st.dataframe(table)
+    """
