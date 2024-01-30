@@ -7,10 +7,11 @@ from pathlib import Path
 def exploration():
     with st.container():
         st.title("Exploration🕵️‍♂️")
+        
                 
    
     #Import des datafames
-    @st.cache_data
+    @st.cache
     def load_data(url):
         df = pd.read_csv(url)
         return df
