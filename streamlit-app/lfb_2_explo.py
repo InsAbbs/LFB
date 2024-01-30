@@ -17,6 +17,7 @@ def exploration():
     
     df_mob = load_data("data_mob_2021.csv")
     df_inc = load_data("data_inc_2021.csv")
+    df_summary = load_data("data_summary.csv")
 
     @st.cache_data
     def merge(df1, df2):
@@ -36,9 +37,11 @@ def exploration():
     #Merge
     st.header("Merge")
     st.dataframe(df.head(), use_container_width = True)
-
-    #Description des rapports 'Incident' et 'Mobilisation' après fusion
     st.write("Il y a", df.shape[0], "lignes et", df.shape[1], "colonnes dans le jeu de données fusionnées")
+
+    #Summary
+    st.header("Résumé")
+    st.dataframe(df_summary, use_container_width = True)
 
     @st.cache_data
     def summarize(df):
